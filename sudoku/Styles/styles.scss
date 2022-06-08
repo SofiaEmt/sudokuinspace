@@ -132,6 +132,27 @@ nav {
     min-width: 40%;
 }
 
+svg {
+    position: absolute;
+    width: 30vw;
+    left: 5em;
+    bottom: 5em;
+    //transform: rotate(-35deg);
+    animation: teasing .8s infinite ease-in-out;
+}
+
+
+@keyframes teasing {
+    0% {
+        transform: rotate(-35deg);
+    } 50% {
+        transform: rotate(-25deg);
+    } 100% {
+        transform: rotate(-35deg);
+    }
+}
+
+
 .start-screen {
     position: absolute;
     top: 0;

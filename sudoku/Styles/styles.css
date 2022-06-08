@@ -135,6 +135,45 @@ nav {
   min-width: 40%;
 }
 
+svg {
+  position: absolute;
+  width: 30vw;
+  left: 5em;
+  bottom: 5em;
+  -webkit-animation: teasing .8s infinite ease-in-out;
+          animation: teasing .8s infinite ease-in-out;
+}
+
+@-webkit-keyframes teasing {
+  0% {
+    -webkit-transform: rotate(-35deg);
+            transform: rotate(-35deg);
+  }
+  50% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+  100% {
+    -webkit-transform: rotate(-35deg);
+            transform: rotate(-35deg);
+  }
+}
+
+@keyframes teasing {
+  0% {
+    -webkit-transform: rotate(-35deg);
+            transform: rotate(-35deg);
+  }
+  50% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+  100% {
+    -webkit-transform: rotate(-35deg);
+            transform: rotate(-35deg);
+  }
+}
+
 .start-screen {
   position: absolute;
   top: 0;

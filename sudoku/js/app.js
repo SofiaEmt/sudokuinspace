@@ -18,6 +18,8 @@ const result_screen = document.querySelector('#result-screen');
 
 const cells = document.querySelectorAll('.main-grid-cell');
 
+const svg = document.querySelector('#svg-bubble');
+
 const name_input = document.querySelector('#input-name');
 
 const number_inputs = document.querySelectorAll('.number');
@@ -43,7 +45,6 @@ let selected_cell = -1;
 // ---------------
 
 const getGameInfo = () => JSON.parse(localStorage.getItem('game'));
-
 
 // add space for each 9 cells
 const initGameGrid = () => {
@@ -300,6 +301,8 @@ initCellsEvent = () => {
 const startGame = () => {
     start_screen.classList.remove('active');
     game_screen.classList.add('active');
+
+    svg.classList.add('remove-svg');
 
     player_name.innerHTML = name_input.value.trim();
     setPlayerName(name_input.value.trim());
