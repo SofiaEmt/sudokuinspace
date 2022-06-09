@@ -6,6 +6,11 @@ document.querySelector('#dark-mode-toggle').addEventListener('click', () => {
     document.querySelector('meta[name="theme-color"').setAttribute('content', isDarkMode ? '#1a1a2e' : '#fff');
 });
 
+function navHeadingAnimation() {
+    var navbar = document.getElementById('nav-logo');
+    navbar.classList.toggle('shake');
+}
+
 // initial value
 
 // screens
@@ -405,5 +410,6 @@ const init = () => {
         name_input.focus();
     }
 }
+
 
 init();

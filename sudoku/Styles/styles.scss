@@ -90,11 +90,15 @@ nav {
     height: var(--nav-size);
 }
 
-.nav-logo {
+#nav-logo {
     font-size: var(--font-size-1g);
     color: var(--blue);
-
 }
+
+.shake {
+    animation: bounce .5s cubic-bezier(.175, .885, .32, 1.275);
+}
+
 
 .dark-mode-toggle {
     color: var(--blue);
