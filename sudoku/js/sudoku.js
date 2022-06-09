@@ -91,7 +91,7 @@ const sudokuCreate = (grid) => {
         col: -1
     }
 
-    if(!findUnassignedPos(grid, unassigned_pos)) return true;
+    if (!findUnassignedPos(grid, unassigned_pos)) return true;
 
     let number_list = shuffleArray([...CONSTANT.NUMBERS]);
 
@@ -99,13 +99,13 @@ const sudokuCreate = (grid) => {
     let col = unassigned_pos.col;
 
     number_list.forEach((num, i) => {
-        if(isSafe(grid, row, col, num)) {
+        if (isSafe(grid, row, col, num)) {
             grid[row][col] = num;
 
-            if(isFullGrid(grid)) {
+            if (isFullGrid(grid)) {
                 return true;
             } else {
-                if(sudokuCreate(grid)) {
+                if (sudokuCreate(grid)) {
                     return true;
                 }
             }
@@ -123,15 +123,15 @@ const sudokuCheck = (grid) => {
         col: -1
     }
 
-    if(!findUnassignedPos(grid, unassigned_pos)) return true;
+    if (!findUnassignedPos(grid, unassigned_pos)) return true;
 
     grid.forEach((row, i) => {
         row.forEach((num, j) => {
-            if(isSafe(grid, i, j, num)) {
-                if(isFullGrid(grid)) {
+            if (isSafe(grid, i, j, num)) {
+                if (isFullGrid(grid)) {
                     return true;
                 } else {
-                    if(sudokuCreate(grid)) {
+                    if (sudokuCreate(grid)) {
                         return true;
                     }
                 }
@@ -146,16 +146,16 @@ const rand = () => Math.floor(Math.random() * CONSTANT.GRID_SIZE);
 
 const removeCells = (grid, level) => {
     let res = [...grid];
-    let attempts = level;
-    while(attempts > 0) {
+    let attemps = level;
+    while (attemps > 0) {
         let row = rand();
         let col = rand();
-        while(res[row][col] === 0) {
+        while (res[row][col] === 0) {
             row = rand();
             col = rand();
         }
         res[row][col] = CONSTANT.UNASSIGNED;
-        attempts--;
+        attemps--;
     }
     return res;
 }
